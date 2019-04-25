@@ -1,0 +1,264 @@
+// IMPORTS
+@import '~normalize.css'
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600,800')
+@import url('https://fonts.googleapis.com/css?family=Rubik:400')
+
+// VARS
+$black: #17252A
+$gray: #EAEAEA
+$grayD: #ADADAD
+$blue: #22A7F0
+$green: #1BBC9B
+$greenL: #DEF2F1
+$greenD: #2B7A78
+$white: #FEFFFF
+
+// Responsive Media Queries
+$breakpoint-x-small: 485px
+$breakpoint-small: 600px
+$breakpoint-med-small: 960px
+$breakpoint-med: 1175px
+$breakpoint-med-large: 1356px
+$breakpoint-large: 1690px
+
+
+body
+	background: $greenL
+	#root
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 100vh
+		padding: 4em 0
+		box-sizing: border-box
+		@media screen and (max-width: 700px)
+			height: auto
+		.App
+			width: 50%
+			border-radius: .8em
+			box-sizing: border-box
+			background: $white
+			box-shadow:
+			display: flex
+			flex-direction: column
+			padding: 4em
+			@media screen and (max-width: 1360px)
+				width: 70%
+			@media screen and (max-width: 800px)
+				width: 95%
+				padding: 4em 1em
+			.head
+				display: flex
+				justify-content: space-between
+				@media screen and (max-width: 800px)
+					flex-direction: column
+				.city
+					font-size: 2.5em
+					font-family: "Montserrat"
+					margin: 0
+					display: inline-block
+					margin: auto 0
+					overflow: hidden 
+					text-overflow: ellipsis						
+					@media screen and (max-width: 800px)
+						text-align: center
+						margin-bottom: .7em
+				form
+					position: relative
+					@media screen and (max-width: 800px)
+						width: 80%
+						margin: 0 auto
+					input
+						background: $gray
+						color: $black
+						padding: 1em .7em
+						border: 0
+						font-family: "Rubik"
+						font-size: 1.26em
+						border-radius: .3em
+						box-sizing: border-box
+						&::placeholder
+							color: lighten($black, 50%)
+						@media screen and (max-width: 800px)
+							width: 100%
+					#geo
+						position: absolute
+						top: 1.25em
+						right: .7em
+						width: 1.5em
+						height: 1.5em
+						background: url('../icons/geo.svg')
+						background-repeat: no-repeat
+						background-size: 100%
+						background-position: center
+						cursor: pointer
+					.color-codes 
+						position: absolute
+						z-index: 99
+						left: 0 !important
+						top: auto !important
+						.auto-complete-results 
+							list-style: none
+							margin: 0 
+							padding: 0
+							border-radius: .8em
+							li 
+								font-family: "Rubik"
+								padding: 1em .7em
+								border-bottom: .1em solid lighten($grayD, 15)
+								background: $gray
+								cursor: pointer
+								color: $black
+								&:first-child 
+									border-radius: .3em .3em 0 0
+								&:last-child 
+									border-bottom: 0
+									border-radius: 0 0 .3em .3em
+								&:hover 
+									background: lighten($gray, 4)
+								table 
+									width: 100%
+									tr 
+										display: flex
+										justify-content: space-around
+										td
+											&:last-child
+												display: flex
+												justify-content: flex-end
+								.search-text-highlight 
+									font-weight: 800
+									//border-bottom: .1em solid $black
+			.weather
+				display: flex
+				@media screen and (max-width: 700px)
+					flex-direction: column
+				.visual
+					width: 50%
+					@media screen and (max-width: 700px)
+						width: 100%
+						overflow: hidden
+					canvas 
+						display: block
+						margin: 5em auto
+						@media screen and (max-width: 700px)
+							margin: 4em auto 
+						@media screen and (max-width: 300px)
+							width: 200px
+							height: 200px 
+						
+					.text
+						@media screen and (max-width: 700px)
+							text-align: center
+						h3, p
+							margin: 0
+						h3
+							color: $black
+							font-family: "Montserrat"
+						p
+							color: $grayD
+							font-family: "Rubik"
+				.figures
+					width: 50%
+					display: flex 
+					flex-direction: column
+					justify-content: space-between
+					@media screen and (max-width: 700px)
+						width: 100%
+					.figuresWrap 
+						margin: 8em 0
+						@media screen and (max-width: 700px)
+							margin: 4em 0
+						.mainFigureWrap
+							h1
+								font-family: "Montserrat"
+								font-size: 7.5em
+								color: $green
+								margin: 0
+								text-align: center 	
+					.CelSwitchWrap
+						border-radius: 2em						
+						width: 4em		
+						overflow: hidden
+						margin: 0 auto
+						.CelSwitch
+							background: $greenL
+							width: 8em
+							cursor: pointer
+							&:hover 
+								background: $green
+							&:hover h3 
+								color: $white
+						.mainFigure
+							width: 20em
+						.mainFigure, .CelSwitch
+							display: flex
+							transform: translateX(0)
+							transition: all .3s ease-in-out
+							h3
+								width: 4em
+								font-family: "Montserrat"
+								font-size: 1.4em
+								margin: 0
+								text-align: center
+								color: $greenD
+								padding: .5em 0 
+								transition: all .3s ease-in-out 
+					.addFigures
+						display: flex
+						font-family: "Rubik"
+						justify-content: center
+						font-size: 1.25em
+						@media screen and (max-width: 300px)
+							flex-direction: column
+							align-items: center
+						.wind
+							display: flex
+							align-items: center
+							cursor: pointer
+							margin-right: 2em
+							transition: opacity .3s ease-in-out
+							opacity: .5
+							&:hover 
+								opacity: 1	
+							@media screen and (max-width: 300px)
+								margin-right: 0
+								margin-bottom: .4em
+							span
+								width: 1.4em
+								height: 1.4em
+								background: url('../icons/wind.svg')
+								background-repeat: no-repeat
+								background-size: 100%
+								background-position: center
+								margin-right: .5em
+							p
+								margin: 0
+								color: $black
+						.humidity
+							display: flex
+							align-items: center
+							cursor: pointer
+							transition: opacity .3s ease-in-out
+							opacity: .5
+							&:hover 
+								opacity: 1	
+							span
+								width: 1.4em
+								height: 1.4em
+								background: url('../icons/humidity.svg')
+								background-repeat: no-repeat
+								background-size: 100%
+								background-position: center
+								margin-right: .5em
+							p
+								margin: 0
+								color: $black
+
+
+.transition 
+  transform: translateX(-50%) !important
+
+
+
+
+
