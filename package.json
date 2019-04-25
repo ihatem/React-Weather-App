@@ -2,6 +2,7 @@
   "name": "weather-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://ihatem.github.io/React-Weather-App",
   "dependencies": {
     "@vickram/react-auto-complete": "^1.0.3",
     "cities.json": "^1.1.5",
