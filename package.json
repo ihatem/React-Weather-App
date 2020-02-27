@@ -7,7 +7,7 @@
     "@vickram/react-auto-complete": "^1.0.3",
     "axios": "^0.19.0",
     "cities.json": "^1.1.5",
-    "countries-list": "^2.5.0",
+    "countries-list": "^2.5.2",
     "node-sass": "^4.13.0",
     "normalize.css": "^8.0.1",
     "react": "^16.11.0",
