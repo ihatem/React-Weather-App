@@ -10,7 +10,7 @@
     "countries-list": "^2.5.0",
     "node-sass": "^4.13.0",
     "normalize.css": "^8.0.1",
-    "react": "^16.11.0",
+    "react": "^16.13.1",
     "react-animated-weather": "^2.0.0",
     "react-countup": "^4.2.3",
     "react-dom": "^16.11.0",
